@@ -13,7 +13,7 @@ from typing import List
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-load_dotenv()
+
 app = FastAPI()
 
 
@@ -32,7 +32,9 @@ app.add_middleware(
 
 
 
-key = os.environ.get('API_KEY')
+
+
+key = os.getenv("API_KEY")
 genai.configure(api_key=key)
 
 
